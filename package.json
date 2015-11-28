@@ -1,0 +1,27 @@
+{
+  "name": "GetRidOfError",
+  "version": "0.0.1",
+  "description": "Gets rid of error argument in node.js modules",
+  "author": "joykrishnamondal <joykrishnamondal@gmail.com>",
+  "main": "GetRidOfError.js",
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/joykrishnamondal/getridoferror"
+},
+  "keywords": [
+  "livescript",
+  "promise alternative",
+  "lightweight",
+  "backcall"
+],
+  "dependencies": {
+    "prelude-ls": "*",
+    "cli-color":"*",
+    "error-stack-parser":"*"
+  },
+  "devDependencies": {
+    "simple-livescript-watch": "*"
+  },
+  "license": "MIT"
+}
+  
