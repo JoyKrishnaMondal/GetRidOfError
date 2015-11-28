@@ -42,7 +42,7 @@ into this:
 ```
 
 
-fs = require "fs" |> require "GetRidOfError.js"
+fs = require "fs" |> require "GetRidOfError"
 
 data <-! fs.readFile "foo.txt"
 
@@ -70,14 +70,21 @@ With this module you can get rid of those pesky error throws
 ### Installation
 
 ```
-npm install <github Link>
+npm install https://github.com/JoyKrishnaMondal/GetRidOfError.git
 
 ```
 
 ### How To use
 
-```
+```livescript
 
+withE = require "fs"
+
+GROE = require "GetRidOfError"
+
+fs = GROE withE
+
+# Now fs does not require the first argument to be error
 ```
 ### Why ?
 Promises are cool but sometimes you do not want to use a chainsaw to cut your chicken. 
