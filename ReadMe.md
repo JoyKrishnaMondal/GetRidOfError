@@ -39,7 +39,7 @@ into this:
 
 
 
-```
+```livescript
 
 
 fs = require "fs" |> require "GetRidOfError"
