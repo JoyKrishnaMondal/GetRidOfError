@@ -2,7 +2,8 @@
 
 One weird trick to turn this: 
 
-```
+```livescript
+
 fs = require "fs"
 
 error,data <-! fs.readFile "foo.txt"
