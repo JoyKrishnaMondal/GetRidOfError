@@ -1,4 +1,4 @@
-#### Remove Error argument in modules like fs 
+#### GetRidOfError - tiny module to get remove error argument in modules like fs 
 
 One weird trick to turn this: 
 
