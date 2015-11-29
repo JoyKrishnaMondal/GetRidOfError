@@ -1,4 +1,4 @@
-#### GetRidOfError - tiny module to get remove error argument in modules like fs 
+#### GetRidOfError - tiny module to remove error argument in modules like fs 
 
 One weird trick to turn this: 
 
@@ -89,9 +89,10 @@ fs = GROE withE
 ### Why ?
 Promises are cool but sometimes you do not want to use a chainsaw to cut your chicken. 
 
-Callback hell is easily taken care of using backcalls in `livescript`. It's simple synatic sugar to prevent your code from marching to the right. I am not sure about how to do it in vanilla `javascript` or `coffeescript` but I am sure sometime exits to prevent callback hell.
+Callback hell is easily taken care of using backcalls in `livescript`. It's simple synatic sugar to prevent your code from marching to the right. I am not sure about how to do it in vanilla `javascript` or `coffeescript` but there should be an lightweight alternative *besides* promises to prevent callback hell.
 
-This module get rid of one final annoyonace and that is the error argument.
+
+Once you reach that point, one final annoyonace is the error argument. This module removes it and centralizes all error handling for that particular module.
 
 
 #### What do you do with the errors ? 
