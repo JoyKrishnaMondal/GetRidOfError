@@ -109,7 +109,7 @@ Whenever a call is made to any function we keep a cache of the stack to trace th
 
 1. Possible to now get rid of error object for single functions for module like `child_process` :
 ```livescript
-exec = require "child_process" |> (.exec)
+exec = require "child_process" |> (.exec) |> require "GetRidOfError"
 ```
 
 #### NOTE
