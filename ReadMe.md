@@ -105,6 +105,14 @@ Whenever a call is made to any function we keep a cache of the stack to trace th
 
 `NODEJS:` prints the error from nodejs itself and the rest of it is written by me based on the cached error object. 
 
+#### UPDATE 1
+
+1. Possible to now get rid of error object for single functions for module like `child_process` :
+```livescript
+exec = require "child_process" |> (.exec)
+```
+
+#### NOTE
 
 I will not be maintaining this module unless people inform me they are using it. 
 

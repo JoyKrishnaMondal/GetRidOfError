@@ -52,21 +52,24 @@ TakeCareOfErrorOb = (ErroObject,err) ->
 	console.log FileNameC "-----------------"
 	EOb = ESP.parse ErroObject     # (string -> JSON) "errror-stack-parser"
 
+	if not EOb.length > 1
+		return
+
 	First = WhichFSFunction EOb[0] |> ErrorC # Find the main entry of error
 
-	for I from 1 to EOb.length - 3
+	
 
-		Elem = EOb[I]
+	Elem = EOb[1]
 
-		Second = WhichFile Elem     # Find the File of main entry of error
+	Second = WhichFile Elem     # Find the File of main entry of error
 
-		FnName = Second.SecondFunction
+	FnName = Second.SecondFunction
 
-		console.log First +  (ErrorC " -> ") + FileNameC FnName
+	console.log First +  (ErrorC " -> ") + FileNameC FnName
 
-		console.log Second.File + SuccessC " [" + Second.LineNumber + SuccessC "]"
+	console.log Second.File + SuccessC " [" + Second.LineNumber + SuccessC "]"
 
-		First = FnName |> ErrorC 
+	First = FnName |> ErrorC 
 
 	console.log FileNameC "-----------------"
 
@@ -119,11 +122,7 @@ RemoveErrorFromEachFunction = (OldFn) -> ->
 
 		OldFn.apply OldFn,WithoutCallBackbutWithError # Activate the old function with the new list of arugments without User Callback
 
-
-GetRidOfErrors = (module) ->
-
-
-
+Normal = (module) -> 
 	NewModule = {}
 
 	keys = _.keys module
@@ -133,5 +132,14 @@ GetRidOfErrors = (module) ->
 		NewModule[retrieve] = RemoveErrorFromEachFunction module[retrieve]
 
 	NewModule
+
+GetRidOfErrors = (module) ->
+
+	switch typeof module 
+	| "function" => RemoveErrorFromEachFunction module
+	| "object" => Normal module
+	| otherwise =>
+		console.err ErrorC "Error - GetRidOfError.js :" +  FileNameC " argument type if not programmed for. "
+
 
 module.exports = GetRidOfErrors
