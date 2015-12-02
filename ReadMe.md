@@ -70,7 +70,7 @@ With this module you can get rid of those pesky error throws
 ### Installation
 
 ```
-npm install https://github.com/JoyKrishnaMondal/GetRidOfError.git
+npm install joykrishnamondal/GetRidError
 
 ```
 
