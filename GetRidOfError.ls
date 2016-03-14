@@ -22,6 +22,9 @@ WhichFSFunction = (TopOb) ->
 	# <Object> is anonymous.
 
 	FName = TopOb.functionName
+	
+	if FName is undefined
+		return null
 
 	if (FName.slice 0,7) is "Object."
 		FName =  7 |> TopOb.functionName.slice 
